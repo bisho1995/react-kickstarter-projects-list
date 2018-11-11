@@ -17,7 +17,7 @@ function ProjectCard(props) {
               <div>
                 <b>{props.title}</b>
                 <br />
-                {props.type} | <i>{props.by}</i>
+                {props.type} | by <i>{props.by}</i>
                 <hr />
               </div>
               <p>{props.blurb}</p>
@@ -31,32 +31,34 @@ function ProjectCard(props) {
               </p>
             </div>
             <hr />
-            <Grid container spacing={24}>
-              <Grid item xs>
-                <span className="left center-align">
-                  <Icon className="location-icon">location_on</Icon>
-                  <br />
-                  <b>{props.location}</b>
-                </span>
+            <div className="container-fluid extra-information">
+              <Grid container spacing={24}>
+                <Grid item xs>
+                  <span className="left center-align">
+                    <Icon className="location-icon">location_on</Icon>
+                    <br />
+                    <b>{props.location}</b>
+                  </span>
+                </Grid>
+                <Grid item xs>
+                  <span className="right center-align">
+                    <Icon>access_time</Icon>
+                    <br />
+                    {end_date < now
+                      ? `Expired ${diff_days} day(s) ago`
+                      : `After ${diff_days} day(s)`}
+                  </span>
+                </Grid>
               </Grid>
-              <Grid item xs>
-                <span className="right center-align">
-                  <Icon>access_time</Icon>
-                  <br />
-                  {end_date < now
-                    ? `Expired ${diff_days} day(s) ago`
-                    : `After ${diff_days} day(s)`}
-                </span>
-              </Grid>
-            </Grid>
+            </div>
             <div className="card-action center-align">
               <a
-                href="https://materializecss.com/cards.html"
+                href={`https://www.kickstarter.com/${props.url}`}
                 target="_blank"
                 className="center-align"
                 rel="noopener noreferrer"
               >
-                Visit Project <Icon>arrow_forward</Icon>
+                Visit Project
               </a>
             </div>
           </div>

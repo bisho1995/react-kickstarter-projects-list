@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import Filter from "../../containers/Filters";
 import Result from "../../containers/Results";
 import SearchContainer from "../../containers/SearchContainer";
 import { SET_DATA } from "../../actions";
@@ -20,10 +21,12 @@ class HomePage extends Component {
         console.log(err);
       });
   }
+
   render() {
     return (
       <div>
         <SearchContainer />
+        <Filter />
         <Result />
         {this.props.data.length === 0 && this.props.search.length === 0 ? (
           <SpinnerWrapper />

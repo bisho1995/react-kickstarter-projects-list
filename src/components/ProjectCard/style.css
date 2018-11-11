@@ -12,6 +12,9 @@
   position: relative;
   margin: 0px auto;
 }
+.projectCard .extra-information {
+  padding: 0 2rem;
+}
 .location-icon {
   color: #e53935;
 }

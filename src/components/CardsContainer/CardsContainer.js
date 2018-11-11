@@ -14,12 +14,23 @@ export default function CardsContainer(props) {
         amt_pledged={card["amt.pledged"]}
         percentage_funded={card["percentage.funded"]}
         blurb={card.blurb}
+        url={card.url}
       />
     </div>
   ));
   return (
     <div className="container">
-      <div className="project-cards-container">{listItms}</div>
+      <div className="project-cards-container">
+        {props.data.length > 0 ? (
+          listItms
+        ) : (
+          <div className="center-align">
+            <br />
+            <br />
+            <b>Sorry cound not find any project !!</b>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

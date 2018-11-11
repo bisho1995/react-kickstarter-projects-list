@@ -6,7 +6,7 @@ function SearchWrapper(props) {
   return (
     <div className="search-wrapper">
       <div className="container">
-        <h1>Search Kickstarter Projects</h1>
+        <h1>Kickstarter Projects</h1>
         <Search
           className="search"
           setData={props.setData}
