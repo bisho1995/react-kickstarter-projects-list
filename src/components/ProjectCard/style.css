@@ -1,0 +1,35 @@
+.darkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(75, 75, 75, 0.764);
+}
+.projectCard {
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+.location-icon {
+  color: #e53935;
+}
+.expired-icon {
+  color: #e53935;
+}
+.card-title {
+  top: 0;
+  z-index: 1;
+}
+.icon-money {
+  color: #00695c;
+}
+.cardActionArea {
+  background: red;
+}
+.media {
+  position: relative;
+}
+.card-action-grid {
+  background: #f7f7f7;
+}

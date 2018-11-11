@@ -1,0 +1,16 @@
+.search-wrapper {
+  background: url("images/search.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: white;
+  padding: 4rem 0rem;
+  font-family: Roboto;
+}
+
+.search-wrapper .search {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
