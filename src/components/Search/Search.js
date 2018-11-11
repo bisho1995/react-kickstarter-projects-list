@@ -13,15 +13,18 @@ class Search extends React.Component {
   }
   onKeyPress(e) {
     if (e.key === "Enter") {
-      this.getSearchedData();
+      this.props.setSearch(this.state.search);
+      this.props.setData(this.getSearchedData(this.state.search));
     }
   }
 
   getSearchedData(searchKey) {
     const data = localStorage.getItem("projects");
     let projects = JSON.parse(data);
-    projects = projects.filter(project => project.includes(searchKey));
-    console.log(projects);
+    projects = projects.filter(project =>
+      project.title.toLowerCase().includes(searchKey)
+    );
+    return projects;
   }
   render() {
     return (

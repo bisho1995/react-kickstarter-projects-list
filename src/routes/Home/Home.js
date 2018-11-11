@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import Result from "../../containers/Results";
+import SearchContainer from "../../containers/SearchContainer";
 import { SET_DATA } from "../../actions";
-import Spinner from "../../components/Spinner";
+import SpinnerWrapper from "../../components/SpinnerWrapper";
 import CardsContainer from "../../components/CardsContainer";
-import SearchWrapper from "../../components/SearchWrapper";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -22,9 +23,10 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <SearchWrapper />
-        {this.props.data.length === 0 ? (
-          <Spinner />
+        <SearchContainer />
+        <Result />
+        {this.props.data.length === 0 && this.props.search.length === 0 ? (
+          <SpinnerWrapper />
         ) : (
           <CardsContainer data={this.props.data} />
         )}
@@ -34,7 +36,8 @@ class HomePage extends Component {
 }
 const mapStateToProps = state => {
   return {
-    data: state.data
+    data: state.data,
+    search: state.search
   };
 };
 

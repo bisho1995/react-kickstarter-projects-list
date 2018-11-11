@@ -23,40 +23,41 @@ function ProjectCard(props) {
               <p>{props.blurb}</p>
               <p>
                 <Icon className="icon-money">attach_money</Icon>{" "}
-                {props.amt_pledged}$ was pledged
+                <b>{props.amt_pledged}$</b> was pledged
               </p>
               <p>
                 <Icon className="icon-money">attach_money</Icon>{" "}
-                {props.percentage_funded}% of funds has been received
+                <b>{props.percentage_funded}%</b> of funds has been received
               </p>
             </div>
             <hr />
             <Grid container spacing={24}>
               <Grid item xs>
-                <Icon className="location-icon">location_on</Icon>{" "}
-                <b>{props.location}</b>
+                <span className="left center-align">
+                  <Icon className="location-icon">location_on</Icon>
+                  <br />
+                  <b>{props.location}</b>
+                </span>
               </Grid>
               <Grid item xs>
-                <span className="right">
+                <span className="right center-align">
                   <Icon>access_time</Icon>
+                  <br />
                   {end_date < now
                     ? `Expired ${diff_days} day(s) ago`
                     : `After ${diff_days} day(s)`}
                 </span>
               </Grid>
             </Grid>
-            <div className="card-action">
-              <Grid container spacing={24} className="card-action-grid">
-                <Grid item xs>
-                  <a
-                    href="https://materializecss.com/cards.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit Project <Icon>arrow_forward</Icon>
-                  </a>
-                </Grid>
-              </Grid>
+            <div className="card-action center-align">
+              <a
+                href="https://materializecss.com/cards.html"
+                target="_blank"
+                className="center-align"
+                rel="noopener noreferrer"
+              >
+                Visit Project <Icon>arrow_forward</Icon>
+              </a>
             </div>
           </div>
         </div>
