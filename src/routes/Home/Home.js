@@ -13,6 +13,7 @@ class HomePage extends Component {
       .then(data => data.data)
       .then(data => {
         this.props.setData(data);
+        localStorage.setItem("projects", JSON.stringify(data));
       })
       .catch(err => {
         console.log(err);

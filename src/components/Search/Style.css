@@ -1,12 +1,14 @@
 .search {
   background: rgba(236, 236, 236, 0.825) !important;
   color: black !important;
+  font-weight: bold;
   padding: 0.1rem 1rem !important;
-  width: 90%;
+  width: 90% !important;
   max-width: 600px;
 }
 .search::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(97, 97, 97);
   opacity: 1; /* Firefox */
+  font-weight: normal;
 }
