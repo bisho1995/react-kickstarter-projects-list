@@ -6,7 +6,7 @@ function SearchWrapper() {
   return (
     <div className="search-wrapper">
       <div className="container">
-        <h1>Search Wrapper</h1>
+        <h1>Search Kickstarter Projects</h1>
         <Search className="search" />
       </div>
     </div>

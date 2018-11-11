@@ -9,34 +9,13 @@ function ProjectCard(props) {
       <div className="row">
         <div className="col s12">
           <div className="card">
-            <div className="card-image">
-              <img
-                src="https://materializecss.com/images/sample-1.jpg"
-                alt=""
-              />
-              <div className="card-title">
-                {props.title}
-                <br />
-                {props.type} | {props.by}
-              </div>
-              <div className="darkOverlay" />
-            </div>
             <div className="card-content">
               <div>
-                <Grid container spacing={24}>
-                  <Grid item xs>
-                    <Icon className="location-icon">location_on</Icon>{" "}
-                    {props.location}
-                  </Grid>
-                  <Grid item xs>
-                    <span className="right">
-                      <Icon>access_time</Icon>
-                      {props.end_time}
-                    </span>
-                  </Grid>
-                </Grid>
+                <b>{props.title}</b>
+                <br />
+                {props.type} | <i>{props.by}</i>
+                <hr />
               </div>
-              <hr />
               <p>{props.blurb}</p>
               <p>
                 <Icon className="icon-money">attach_money</Icon>{" "}
@@ -47,6 +26,19 @@ function ProjectCard(props) {
                 {props.percentage_funded}
               </p>
             </div>
+            <hr />
+            <Grid container spacing={24}>
+              <Grid item xs>
+                <Icon className="location-icon">location_on</Icon>{" "}
+                {props.location}
+              </Grid>
+              <Grid item xs>
+                <span className="right">
+                  <Icon>access_time</Icon>
+                  {props.end_time}
+                </span>
+              </Grid>
+            </Grid>
             <div className="card-action">
               <Grid container spacing={24} className="card-action-grid">
                 <Grid item xs>
@@ -57,11 +49,6 @@ function ProjectCard(props) {
                   >
                     Visit Project <Icon>arrow_forward</Icon>
                   </a>
-                </Grid>
-                <Grid item xs>
-                  <span className="right">
-                    <Icon className="expired-icon">access_time</Icon> Expired
-                  </span>
                 </Grid>
               </Grid>
             </div>

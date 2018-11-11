@@ -5,12 +5,11 @@
   background-size: cover;
 
   color: white;
+  text-align: center;
   padding: 4rem 0rem;
   font-family: Roboto;
 }
 
 .search-wrapper .search {
   position: relative;
-  left: 50%;
-  transform: translate(-50%);
 }
