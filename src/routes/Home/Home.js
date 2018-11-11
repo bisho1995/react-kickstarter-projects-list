@@ -8,10 +8,14 @@ import { SET_DATA } from "../../actions";
 import SpinnerWrapper from "../../components/SpinnerWrapper";
 import CardsContainer from "../../components/CardsContainer";
 
+// const url = "http://starlord.hackerearth.com/kickstarter"
+
 class HomePage extends Component {
   componentDidMount() {
     axios
-      .get("http://starlord.hackerearth.com/kickstarter")
+      .get(
+        "https://raw.githubusercontent.com/bisho1995/react-kickstarter-projects-list/master/kickstarter.json"
+      )
       .then(data => data.data)
       .then(data => {
         this.props.setData(data);
