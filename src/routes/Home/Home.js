@@ -13,7 +13,9 @@ import CardsContainer from "../../components/CardsContainer";
 class HomePage extends Component {
   componentDidMount() {
     axios
-      .get("http://starlord.hackerearth.com/kickstarter")
+      .get(
+        "https://raw.githubusercontent.com/bisho1995/react-kickstarter-projects-list/master/kickstarter.json"
+      )
       .then(data => data.data)
       .then(data => {
         this.props.setData(data);
