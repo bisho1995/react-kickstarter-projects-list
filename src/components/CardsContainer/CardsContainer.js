@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "../ProjectCard";
-import "./CardsContainer.css";
+import "./CardsContainer.scss";
 
 export default function CardsContainer(props) {
   const listItms = props.data.map(card => (

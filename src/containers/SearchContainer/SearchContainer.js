@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchWrapper from "../../components/SearchWrapper";
 import { connect } from "react-redux";
 import { SET_DATA, SET_SEARCH } from "../../actions";
-import "./Style.css";
+import "./Style.scss";
 
 class SearchContainer extends Component {
   render() {

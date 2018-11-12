@@ -7,6 +7,7 @@ import SearchContainer from "../../containers/SearchContainer";
 import { SET_DATA } from "../../actions";
 import SpinnerWrapper from "../../components/SpinnerWrapper";
 import CardsContainer from "../../components/CardsContainer";
+import "./Home.scss";
 
 // const url = "http://starlord.hackerearth.com/kickstarter"
 

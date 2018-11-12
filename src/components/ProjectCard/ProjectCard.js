@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import Icon from "@material-ui/core/Icon";
 import Grid from "@material-ui/core/Grid";
-import "./style.css";
+import "./style.scss";
 
 function ProjectCard(props) {
   const now = moment(new Date());

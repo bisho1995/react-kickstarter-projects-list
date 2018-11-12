@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Icon from "@material-ui/core/Icon";
 import { SET_DATA } from "../../actions";
-import "./FundedPercentageFilter.css";
+import "./FundedPercentageFilter.scss";
 
 class FundedPercentageFilter extends Component {
   sortProjectsInAscendingOrderFunded() {

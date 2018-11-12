@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ThinResult from "../../components/Results";
 import { SET_SEARCH } from "../../actions/";
-
+import "./Results.scss";
 class Result extends Component {
   render() {
     return (

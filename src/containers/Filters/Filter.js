@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FundedPercentageFilter from "../FundedPercentageFilter";
 import EndDateFilter from "../EndDateFilter";
-import "./Filter.css";
+import "./Filter.scss";
 import { Icon } from "@material-ui/core";
 
 class Filter extends Component {
