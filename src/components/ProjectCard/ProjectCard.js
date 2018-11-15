@@ -9,7 +9,7 @@ function ProjectCard(props) {
   const end_date = moment(props.end_time);
   const diff_days = parseInt(moment.duration(now.diff(end_date)).asDays(), 10);
   return (
-    <div className="projectCard">
+    <article className="projectCard">
       <div className="row">
         <div className="col s12">
           <div className="card">
@@ -64,7 +64,7 @@ function ProjectCard(props) {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

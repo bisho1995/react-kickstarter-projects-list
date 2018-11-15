@@ -1,5 +1,4 @@
 import React from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import ProjectCard from "../ProjectCard";
 import "./CardsContainer.scss";
 
@@ -20,26 +19,18 @@ export default function CardsContainer(props) {
     </div>
   ));
   return (
-    <div className="container">
-      <ReactCSSTransitionGroup
-        transitionName="example"
-        transitionAppear={true}
-        transitionAppearTimeout={500}
-        transitionEnter={false}
-        transitionLeave={false}
-      >
-        <div className="project-cards-container">
-          {props.data.length > 0 ? (
-            listItms
-          ) : (
-            <div className="center-align">
-              <br />
-              <br />
-              <b>Sorry cound not find any project !!</b>
-            </div>
-          )}
-        </div>
-      </ReactCSSTransitionGroup>
-    </div>
+    <article className="container">
+      <div className="project-cards-container">
+        {props.data.length > 0 ? (
+          listItms
+        ) : (
+          <div className="center-align">
+            <br />
+            <br />
+            <b>Sorry cound not find any project !!</b>
+          </div>
+        )}
+      </div>
+    </article>
   );
 }

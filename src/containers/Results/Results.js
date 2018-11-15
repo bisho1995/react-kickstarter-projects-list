@@ -6,13 +6,13 @@ import "./Results.scss";
 class Result extends Component {
   render() {
     return (
-      <div>
+      <article>
         {this.props.search.length > 0 ? (
           <ThinResult search={this.props.search} />
         ) : (
           <span />
         )}
-      </div>
+      </article>
     );
   }
 }

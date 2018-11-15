@@ -7,12 +7,12 @@ import "./Style.scss";
 class SearchContainer extends Component {
   render() {
     return (
-      <div>
+      <article>
         <SearchWrapper
           setData={this.props.setData}
           setSearch={this.props.setSearch}
         />
-      </div>
+      </article>
     );
   }
 }

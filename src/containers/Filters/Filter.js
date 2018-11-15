@@ -7,7 +7,7 @@ import { Icon } from "@material-ui/core";
 class Filter extends Component {
   render() {
     return (
-      <div className="container-fluid center-align filter-container">
+      <article className="container-fluid center-align filter-container">
         <b>
           <Icon>settings_input_composite</Icon>{" "}
         </b>
@@ -16,7 +16,7 @@ class Filter extends Component {
         <FundedPercentageFilter />
         {"  "}
         <EndDateFilter />
-      </div>
+      </article>
     );
   }
 }

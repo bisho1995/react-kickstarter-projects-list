@@ -3,6 +3,8 @@
   max-width: 400px;
   position: relative;
   margin: 0px auto;
+  opacity: 1;
+  transition: opacity 5s;
 
   .darkOverlay {
     position: absolute;

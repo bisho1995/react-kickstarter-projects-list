@@ -28,14 +28,16 @@ class Search extends React.Component {
   }
   render() {
     return (
-      <input
-        type="text"
-        placeholder="Enter the movie name here"
-        className="search"
-        value={this.state.search}
-        onChange={this.onChange.bind(this)}
-        onKeyPress={this.onKeyPress.bind(this)}
-      />
+      <article>
+        <input
+          type="text"
+          placeholder="Enter the project name here"
+          className="search"
+          value={this.state.search}
+          onChange={this.onChange.bind(this)}
+          onKeyPress={this.onKeyPress.bind(this)}
+        />
+      </article>
     );
   }
 }

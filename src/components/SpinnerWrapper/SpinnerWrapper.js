@@ -3,9 +3,9 @@ import Spinner from "../Spinner";
 import "./SpinnerWrapper.scss";
 function SpinnerWrapper(props) {
   return (
-    <div className="container spinner-wrapper">
+    <article className="container spinner-wrapper">
       <Spinner className="spinner" />
-    </div>
+    </article>
   );
 }
 

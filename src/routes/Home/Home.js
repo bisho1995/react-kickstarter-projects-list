@@ -29,7 +29,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <article>
         <SearchContainer />
         <Filter />
         <Result />
@@ -38,7 +38,7 @@ class HomePage extends Component {
         ) : (
           <CardsContainer data={this.props.data} />
         )}
-      </div>
+      </article>
     );
   }
 }
