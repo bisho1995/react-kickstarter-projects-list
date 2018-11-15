@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchWrapper from "../../components/SearchWrapper";
 import { connect } from "react-redux";
-import { SET_DATA, SET_SEARCH } from "../../actions";
+import { setData, setSearch } from "../../actions";
 import "./Style.scss";
 
 class SearchContainer extends Component {
@@ -19,8 +19,8 @@ class SearchContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setData: data => dispatch({ type: SET_DATA, payload: data }),
-    setSearch: data => dispatch({ type: SET_SEARCH, payload: data })
+    setData: data => dispatch(setData(data)),
+    setSearch: data => dispatch(setSearch(data))
   };
 };
 

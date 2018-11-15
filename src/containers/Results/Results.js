@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ThinResult from "../../components/Results";
-import { SET_SEARCH } from "../../actions/";
+import { setSearch } from "../../actions/";
 import "./Results.scss";
 class Result extends Component {
   render() {
@@ -25,7 +25,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setData: data => dispatch({ type: SET_SEARCH, payload: data })
+    setData: data => dispatch(setSearch(data))
   };
 };
 

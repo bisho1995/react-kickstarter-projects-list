@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Icon from "@material-ui/core/Icon";
-import { SET_DATA } from "../../actions";
+import { setData } from "../../actions";
 import "./FundedPercentageFilter.scss";
 
 class FundedPercentageFilter extends Component {
@@ -48,7 +48,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    setData: data => dispatch({ type: SET_DATA, payload: data })
+    setData: data => dispatch(setData(data))
   };
 };
 export default connect(

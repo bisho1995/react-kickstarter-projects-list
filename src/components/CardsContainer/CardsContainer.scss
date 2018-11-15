@@ -3,6 +3,14 @@
   grid-template-columns: auto auto;
   grid-gap: 10px;
 
+  .example-appear {
+    opacity: 0.04;
+  }
+  .example-appear.example-appear-active {
+    opacity: 2;
+    transition: opacity 50s ease-in;
+  }
+
   .ProjectCard {
     display: inline;
   }

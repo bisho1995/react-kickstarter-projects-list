@@ -1,18 +1,20 @@
-import { SET_DATA, SET_SEARCH } from "../actions";
+import { handleActions } from "redux-actions";
+import { setData, setSearch } from "../actions";
 const initialState = {
   data: [],
   search: ""
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_DATA:
-      return { ...state, data: action.payload };
-    case SET_SEARCH:
-      return { ...state, search: action.payload };
-    default:
-      return state;
-  }
-};
+const reducer = handleActions(
+  {
+    [setSearch]: (state, { payload: search }) => {
+      return { ...state, search };
+    },
+    [setData]: (state, { payload: data }) => {
+      return { ...state, data };
+    }
+  },
+  initialState
+);
 
 export default reducer;
