@@ -1,5 +1,11 @@
+import qs from 'query-string'
+import {createBrowserHistory} from 'history'
 import React from "react";
+import {getSearchedData} from '../../utils/helper'
 import "./Style.scss";
+
+const history = createBrowserHistory();
+const location = history.location;
 
 class Search extends React.Component {
   constructor(props) {
@@ -11,20 +17,19 @@ class Search extends React.Component {
   onChange(e) {
     this.setState({ search: e.target.value });
   }
+  componentDidMount() {
+  }
   onKeyPress(e) {
     if (e.key === "Enter") {
       this.props.setSearch(this.state.search);
-      this.props.setData(this.getSearchedData(this.state.search));
+      this.props.setData(getSearchedData(this.state.search));
+      this.addSearchQueryParam(this.state.search)
     }
   }
 
-  getSearchedData(searchKey) {
-    const data = localStorage.getItem("projects");
-    let projects = JSON.parse(data);
-    projects = projects.filter(project =>
-      project.title.toLowerCase().includes(searchKey)
-    );
-    return projects;
+  addSearchQueryParam(search) {
+    history.push({pathname: location.pathname,
+    search: `?${qs.stringify({search})}`})
   }
   render() {
     return (
