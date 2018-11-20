@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import {createBrowserHistory} from 'history'
+import qs from 'query-string'
+import {getSearchedData} from '../../utils/helper'
 import Filter from "../../containers/Filters";
 import Result from "../../containers/Results";
 import SearchContainer from "../../containers/SearchContainer";
-import { SET_DATA } from "../../actions";
+import { setData, setSearch } from "../../actions";
 import SpinnerWrapper from "../../components/SpinnerWrapper";
 import CardsContainer from "../../components/CardsContainer";
 import "./Home.scss";
 
 // const url = "http://starlord.hackerearth.com/kickstarter"
+const history = createBrowserHistory()
+const location = history.location
 
 class HomePage extends Component {
   componentDidMount() {
@@ -21,11 +26,19 @@ class HomePage extends Component {
       .then(data => {
         this.props.setData(data);
         localStorage.setItem("projects", JSON.stringify(data));
+
+        const queryString = qs.parse(location.search)
+        if (queryString.search && queryString.search.length > 0) {
+          console.log('here', queryString.search, getSearchedData(qs.queryString))
+          this.props.setSearch(queryString.search)
+          this.props.setData(getSearchedData(qs.queryString))
+        }
       })
       .catch(err => {
         console.log(err);
       });
   }
+
 
   render() {
     return (
@@ -51,7 +64,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setData: data => dispatch({ type: SET_DATA, payload: data })
+    setData: data => dispatch(setData(data)),
+    setSearch: data => dispatch(setSearch(data))
   };
 };
 export default connect(
